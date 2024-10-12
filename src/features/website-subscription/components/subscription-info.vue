@@ -10,7 +10,20 @@ const { percentOfSubscription } = storeToRefs(websiteStore)
 
 const isSubscribeModalVisible = ref(false)
 
-const toggleModalVisibility = (isVisible: boolean) => isSubscribeModalVisible.value = isVisible
+const toggleModalVisibility = (isVisible: boolean) => {
+  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const websitesBlock = document.querySelector('.websites')
+
+  if (isSubscribeModalVisible) {
+    document.body.style.overflowY = 'hidden';
+    websitesBlock.style.paddingRight = `${scrollBarWidth}px`;
+  } else {
+    document.body.style.overflowY = 'auto';
+    websitesBlock.style.paddingRight = '0'
+  }
+
+  isSubscribeModalVisible.value = isVisible
+}
 
 function closeModal () {
   toggleModalVisibility(false)

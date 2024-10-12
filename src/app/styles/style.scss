@@ -1,0 +1,95 @@
+@import url("./fonts.scss");
+
+:root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #f1f1f1;
+
+  --color-main: #333333;
+  --color-main-dark: #000000;
+  --color-main-medium: #666666;
+  --color-main-light: #888888;
+  --color-light: #ffffff;
+
+  --color-accent: #346DF1;
+  --color-accent-light: #ECF4FF;
+
+  --boder-color: #CCCCCC;
+
+  --padding-content-desktop: 128px;
+  --padding-aside-desktop: 48px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik-Regular", sans-serif;
+  font-weight: 400;
+  scrollbar-width: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+input:active,
+input:hover,
+input:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

@@ -14,7 +14,7 @@ const toggleModalVisibility = (isVisible: boolean) => {
   const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
   const websitesBlock = document.querySelector('.websites')
 
-  if (isSubscribeModalVisible) {
+  if (isVisible) {
     document.body.style.overflowY = 'hidden';
     websitesBlock.style.paddingRight = `${scrollBarWidth}px`;
   } else {
@@ -25,14 +25,11 @@ const toggleModalVisibility = (isVisible: boolean) => {
   isSubscribeModalVisible.value = isVisible
 }
 
-function closeModal () {
-  toggleModalVisibility(false)
-}
 
 async function subscribeAll () {
   try {
     await websiteStore.toggleSubscriptionAll(true)
-    closeModal()
+    toggleModalVisibility(false)
   } catch (e) {
     console.error(e)
   }
@@ -90,7 +87,7 @@ async function subscribeAll () {
     <EToggleSubscriptionModal
         v-if="isSubscribeModalVisible"
         is-subscribe-modal
-        @close="closeModal"
+        @close="toggleModalVisibility(false)"
         @confirm-action="subscribeAll"
     />
   </aside>

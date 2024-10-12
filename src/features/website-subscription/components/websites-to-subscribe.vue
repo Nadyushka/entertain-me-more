@@ -35,13 +35,14 @@ function getWidthWithoutScrollbar() {
 
 function toggleModal (isModalVisible: boolean) {
   const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const websitesBlock = document.querySelector('.websites')
 
   if (isModalVisible) {
     document.body.style.overflowY = 'hidden';
-    document.body.style.paddingRight = `${scrollBarWidth + 10}px`;
+    websitesBlock.style.paddingRight = `${scrollBarWidth}px`;
   } else {
     document.body.style.overflowY = 'auto';
-    document.body.style. paddingRight = '0'
+    websitesBlock.style.paddingRight = '0'
   }
 
   isUnsubscribeModalVisible.value = isModalVisible

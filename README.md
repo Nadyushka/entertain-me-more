@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+## Инструкция для запуска приложения:
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+1. Скачать проект с помощью - git clone https://github.com/Nadyushka/entertain-me-more.git
 
-## Recommended IDE Setup
+2. Установить пакеты с помощбю команды - npm install
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+3. Запустить проект командой - run dev

@@ -159,12 +159,14 @@ async function toggleSubscription (id: number) {
   }
 
   &__container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 
 
     @media (max-width: 1920px) {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
 

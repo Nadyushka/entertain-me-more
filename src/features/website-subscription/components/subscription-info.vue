@@ -28,7 +28,7 @@ const toggleModalVisibility = (isVisible: boolean) => {
 
 async function subscribeAll () {
   try {
-    await websiteStore.toggleSubscriptionAll(true)
+    await websiteStore.toggleSubscriptionAll()
     toggleModalVisibility(false)
   } catch (e) {
     console.error(e)

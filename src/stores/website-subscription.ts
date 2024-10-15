@@ -26,21 +26,15 @@ export const useWebsitesStore = defineStore(
         }
 
         async function toggleSubscription (id: number): void {
-            websites.value = websites.value.map(website => {
-                return {
-                    ...website,
-                    isSubscribed: website.id === id ? !website.isSubscribed : website.isSubscribed
-                };
-            })
+            const websiteToChange:IWebsite = websites.value
+                .find(website => website.id == id)
+
+            websiteToChange.isSubscribed = !websiteToChange.isSubscribed
         }
 
-        async function toggleSubscriptionAll (needToSubscribeAll: boolean): void {
-            websites.value =  websites.value.map((website) => {
-                return {
-                    ...website,
-                    isSubscribed: needToSubscribeAll ?? false
-                }
-            })
+        async function toggleSubscriptionAll (needToSubscribeAll: boolean = true): void {
+            websites.value
+                .forEach((website) => website.isSubscribed = needToSubscribeAll)
         }
 
         return {

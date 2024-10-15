@@ -1,21 +1,9 @@
 <script setup lang="ts">
 import {SubscriptionInfo, WebsitesToSubscribe} from "@/features";
-import {onMounted, ref} from "vue";
-
-const width = ref()
-
-window.addEventListener('resize', () => {
-  width.value = document.body.clientWidth;
-})
-
-onMounted(() => {
-  width.value = document.body.clientWidth;
-})
-
 </script>
 
 <template>
-  <main class="content" :data-width="width">
+  <main class="content">
     <div class="content__wrapper">
       <h1 class="visually-hidden">ENTERTAIN ME MORE</h1>
       <div class="content__inner">
@@ -35,12 +23,13 @@ onMounted(() => {
   background-color: var(--boder-color);
   min-height: 100vh;
 
-  @media (max-width: 1920px) {
+  @media (max-width: 2020px) {
     padding: 0;
   }
 }
 
 .content__wrapper {
+  width: 100%;
   max-width: 1920px;
   min-height: calc(100vh - 80px);
 

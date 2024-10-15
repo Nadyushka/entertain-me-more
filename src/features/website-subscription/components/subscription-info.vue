@@ -121,7 +121,7 @@ $subscription-color: #F8B200;
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     height: 100%;
     padding: 8px;
   }

@@ -97,15 +97,8 @@ async function toggleSubscription (id: number) {
 
 <style lang="scss" scoped>
 .websites {
-  position: relative;
   background-color: var(--bg-color-dark);
   min-height: 100%;
-
-  @media (max-width: 1000px) {
-    position: relative;
-    left: 0 !important;
-    min-height: auto;
-  }
 
   &__wrapper {
     padding: var(--padding-content-desktop);
@@ -116,11 +109,11 @@ async function toggleSubscription (id: number) {
     }
 
     @media (max-width: 1200px) {
-      padding: 128px 32px;
+      padding: 32px;
     }
 
-    @media (max-width: 720px) {
-      padding: 16px;
+    @media (max-width: 1000px) {
+      padding: 8px;
     }
   }
 

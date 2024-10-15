@@ -5,7 +5,7 @@ import {computed} from "vue";
 
 const props = defineProps<{
   id: {
-    type:String,
+    type: String,
     required: true,
   },
   title: {
@@ -76,6 +76,7 @@ function toggleSubscription () {
 <style scoped lang="scss">
 .website-card {
   max-width: 318px;
+  width: 100%;
   padding: 24px;
   background-color: var(--bg-color-light);
   border-radius:8px;
@@ -85,7 +86,6 @@ function toggleSubscription () {
   gap: 16px;
 
   &__image-wrapper {
-    width: 100%;
     border: 1px solid var(--boder-color);
     display: flex;
     align-items: center;
@@ -108,6 +108,7 @@ function toggleSubscription () {
     line-height: 24px;
     color: var(--color-main);
     font-weight: 400;
+    min-height: 48px;
   }
 
   &__btn {

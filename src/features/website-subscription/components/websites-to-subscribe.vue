@@ -9,19 +9,19 @@ const websiteStore = useWebsitesStore()
 const { websites } = storeToRefs(websiteStore)
 
 const isUnsubscribeModalVisible = ref(false)
-const widthWithoutScrollbar = ref(getWidthWithoutScrollbar());
+const widthWithoutScrollbar = ref();
 
 const websitesBlockWidth = computed(()=> {
-  if (document.documentElement.clientWidth < 1000) {
+  if (document.documentElement.clientWidth < 1100) {
     return '100%'
   } else {
-    return `${widthWithoutScrollbar} - 320px `
+    return widthWithoutScrollbar.value - 320 + 'px'
   }
 })
 
 onMounted(async () => {
-  const res= await websiteStore.getWebsites()
-  console.log(res)
+  await websiteStore.getWebsites()
+  widthWithoutScrollbar.value = getWidthWithoutScrollbar();
 })
 
 window.addEventListener('resize', () => {
@@ -97,10 +97,9 @@ async function toggleSubscription (id: number) {
 
 <style lang="scss" scoped>
 .websites {
-  position: absolute;
-  left: 320px;
+  position: relative;
   background-color: var(--bg-color-dark);
-  min-height: 100vh;
+  min-height: 100%;
 
   @media (max-width: 1000px) {
     position: relative;
@@ -111,13 +110,13 @@ async function toggleSubscription (id: number) {
   &__wrapper {
     padding: var(--padding-content-desktop);
 
-    @media (max-width: 1200px) {
-      padding-left: 48px;
-      padding-right: 48px;
+    @media (max-width: 1600px) {
+      padding-left: 102px;
+      padding-right: 102px;
     }
 
-    @media (max-width: 1000px) {
-      padding: 24px;
+    @media (max-width: 1200px) {
+      padding: 128px 32px;
     }
 
     @media (max-width: 720px) {
@@ -164,11 +163,13 @@ async function toggleSubscription (id: number) {
     flex-wrap: wrap;
     gap: 24px;
 
-    @media (max-width: 1400px) {
-      gap: 12px;
+
+    @media (max-width: 1920px) {
+      justify-content: space-between;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 800px) {
+      margin: 0 auto;
       justify-content: center;
     }
   }

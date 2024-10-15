@@ -102,11 +102,13 @@ $subscription-color: #F8B200;
 }
 
 .info {
-  position: fixed;
+  position: relative;
   width: 320px;
   z-index: 1;
+  min-height: 100%;
 
-  @media (max-width: 1000px) {
+
+  @media (max-width: 1100px) {
     position: relative;
     width: 100%;
   }
@@ -114,16 +116,13 @@ $subscription-color: #F8B200;
 
 .info__wrapper {
   padding: var(--padding-content-desktop) var(--padding-aside-desktop) var(--padding-aside-desktop);
-  height: 100vh;
+  height: 100%;
   background-color: var(--bg-color-light);
   display: flex;
   flex-direction: column;
 
   @media (max-width: 1000px) {
     height: 100%;
-  }
-
-  @media (max-width: 800px) {
     padding: 8px;
   }
 }
@@ -162,6 +161,7 @@ $subscription-color: #F8B200;
 
   &-total {
     flex-grow: 0;
+    flex-shrink: 0;
     border-radius: 8px;
     height: 16px;
     width: max( calc(176 / 320 * 100%), 85%);
@@ -173,7 +173,7 @@ $subscription-color: #F8B200;
   &-selected {
     height: 100%;
     background-color: $subscription-color;
-    transition: 0.2s all;
+    transition: 0.3s all;
   }
 
   &-summary {

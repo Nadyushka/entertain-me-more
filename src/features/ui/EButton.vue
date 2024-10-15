@@ -6,13 +6,11 @@ const props = defineProps<{
   },
   leftIcon: {
     type: Boolean,
-    default: false,
-    required: false
+    default: false
   },
   variant: {
     type: 'outlined' | 'rounded',
-    default: 'rounded',
-    required: false
+    default: 'rounded'
   }
 }>()
 
